@@ -70,13 +70,13 @@ function setupForm(oldData) {
     document.getElementById('accept').onclick = () => {
         const data = {};
         requiredNodes.forEach(node => data[node] = document.getElementById(node).value);
-        data.prov = document.getElementById('prov').value;
+        data.province = document.getElementById('province').value;
         data.sig = g.pencil.toDataURL();
         data.verify_token = g.code;
         console.log(data);
         rq({ url: g.endpoint+'/update_waiver', contentType: 'application/json', crossOrigin: true, method: 'post', type: 'json', data })
             .then(() => {
-                g.waiverNotes.innerHTML = `<h3>Submission Complete</h3><p>Thank you.  The Gold Cup waiver for ${data.participant} has been successfully submitted.</p>`;
+                g.waiverNotes.innerHTML = `<h3>Submission Complete</h3><p>Thank you for submitting your waiver. The Gold Cup team will process your registration and get back to you or your team manager.</p>`;
                 g.waiverNotes.style.display = 'block';
                 g.waiverForm.style.display = 'none';
             })
@@ -113,7 +113,9 @@ function init(domNode) {
 
     const matches = window.location.href.match(/u=([^\s&]+)/);
     if (!matches) {
-        g.wavierNotes.innerHTML = '<h3>No activation code found in URL</h3>';
+        g.waiverNotes.innerHTML = '<h3>No activation code found in URL</h3><p>If you copied and pasted this URL please check that you have copied all the text.</p>';
+        g.waiverNotes.style.display = 'block';
+        g.waiverNotes.classList.add('err');
     }
     g.code = matches[1];
 
