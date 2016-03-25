@@ -6,3 +6,16 @@ canvas {
 #sigarea {
     margin-bottom: 1em;
 }
+
+#waiver_form {
+    display: none;
+}
+
+.err {
+    border-radius: .5em;
+    border: 1px solid #d8000c;
+    color: #d8000c;
+    background-color: #ffbaba;
+    padding: 1em;
+    margin: 1em 0;
+}

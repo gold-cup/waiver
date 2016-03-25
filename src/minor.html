@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-endpoint="http://demosrv.gold-cup.ca">
     <meta charset="UTF-8">
     <title>Gold Cup Waiver - Minor</title>
 </head>
@@ -12,6 +12,9 @@
 <dt>Date(s) of Event:</dt><dd>May 15th 2016, May 21st 2016, May 22nd 2016</dd>
 <dt>Primary location(s) of Event:</dt><dd>Brampton Soccer Centre, Hangar Sports and Events Centre, Ontario Soccer Centre</dd>
 
+<div id="waiver_notes"></div>
+
+<div id="waiver_form">
 <input type="hidden" id="waiver_type" name="waiver_type" value="minor" />
 
 <div>I am the parent or legal guardian of <input name="participant" id="participant" type="text" /> (please enter name) (the “Participant”), who desires to attend at and participate in the Event.
@@ -122,6 +125,9 @@ permit  the  Released  Parties  and  event  personnel  to  administer  first  ai
 
     <button class="button button-outline" id="accept" disabled>Accept</button>
     <button class="button button-clear" id="clear">Clear</button>
+</div>
+
+
     <script src="bundle.js"></script>
 </body>
 </html>

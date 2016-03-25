@@ -21,7 +21,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --port 9200 --content-base src/ --hot"
+    "serve": "./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --port 9200 --content-base src/ --hot --watch-poll"
   },
   "author": "",
   "license": "MIT"
