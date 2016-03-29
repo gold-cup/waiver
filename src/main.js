@@ -74,7 +74,7 @@ function setupForm(oldData) {
         data.sig = g.pencil.toDataURL();
         data.verify_token = g.code;
         console.log(data);
-        rq({ url: g.endpoint+'/update_waiver', contentType: 'application/json', crossOrigin: true, method: 'post', type: 'json', data })
+        rq({ url: g.endpoint+'/update_waiver', contentType: 'application/json', crossOrigin: true, method: 'post', type: 'json', data: JSON.stringify(data) })
             .then(() => {
                 g.waiverNotes.innerHTML = `<h3>Submission Complete</h3><p>Thank you for submitting your waiver. The Gold Cup team will process your registration and get back to you or your team manager.</p>`;
                 g.waiverNotes.style.display = 'block';
