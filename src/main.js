@@ -50,6 +50,11 @@ function setupForm(oldData) {
         g.waiverNotes.style.display = 'none';
     }
 
+    document.getElementById('participant').value = oldData.waiver.participant;
+    if (g.waiverType === 'adult') {
+        document.getElementById('printed_name').value = oldData.waiver.participant;
+    }
+
     g.waiverForm.style.display = 'block';
 
     const requiredNodes = ['participant', 'printed_name', 'city'];
